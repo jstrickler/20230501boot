@@ -10,4 +10,7 @@ while True:  # Loop "forever"
         break  # Exit loop
 
     quantity = int(raw_quantity)  # could validate via try/except
+    if quantity > 8:
+        print("Sorry, max 8 tickets per person")
+        continue
     print("sending {} ticket(s)".format(quantity))
