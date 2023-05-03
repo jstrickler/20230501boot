@@ -16,7 +16,9 @@ def circle_area(diameter):
     Compute the area of a circle from a given diameter
 
     :param diameter: Diameter of circle
+    :type: numeric
     :return: Area of circle
+    :rtype: float
     """
     radius = diameter / 2
     return PI * (radius ** 2)
