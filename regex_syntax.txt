@@ -1,0 +1,84 @@
+
+pat      "Please pat the dough"  "The paint spattered"   "a pattern language" "they had a spat"
+
+p.t     'p' + any-char-but-newline + 't'  "The pot boiled"     "Do it out of spite"  "keep to the right"
+
+p[aeiou]t    pat pet pit pot put 
+
+p[0-9.]t   p0t p1t p8t  
+
+p[a-zA-Z0-9_]t
+
+[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]
+
+\d\d\d-\d\d-\d\d\d\d
+
+\d [0-9]      p\dt
+\s [ \t\n\r\f\b]    p\st
+\w [a-zA-Z0-9_]   p\wt 
+
+# repeat counts
+#  *  +  ?  *?  +?  {x} {x,}  {x,y}
+
+*  0 or more  (longest)
++  1 or more  (longest)
+?  0 or 1
+*? 0 or more (shortest)
++? 1 or more (shortest)
+{x} exactly x
+{x,} at least x
+{x,y} from x to y (inclusive)
+
+.*    0 or more of any character (except \n)
+spam.*ham
+
+with re.S or re.DOTALL
+spam.*ham   match across lines
+
+
+
+\d{3}-\d{2}-\d{4}   SSN
+
+pa+t   pat paaaaaaaaaaaaaaat  NOT pt
+
+p[aeiou]{1,2}t   pat pit pout  peat  NOT pert prat  plot etc
+
+^spam    "spam is delicious"  NOT "I hate spam"
+
+spam$   "I hate spam"   NOT "spam is delicious"
+
+\bspam   "please spammify this thing"   
+
+spam\b   "this is uberspam and I love it"
+
+\bspam\b   "I love spam and I'm not shy about it"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pa*t    pt  pat paaaaaaaaaaaaaaat
+
+
+
+
+
+
+
+
+
+

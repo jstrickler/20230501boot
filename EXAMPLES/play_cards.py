@@ -2,6 +2,9 @@ from carddeck import CardDeck
 
 deck = CardDeck("Mary")
 
+print(f"type(deck): {type(deck)}")
+
+
 deck.shuffle()
 
 for _ in range(10):

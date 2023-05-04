@@ -17,4 +17,13 @@ print()
 
 s3, count = rx_code.subn("___", s) # subn returns tuple with result string and replacement count
 print("Made {} replacements".format(count))
-print(s3)
+print(s3, "\n")
+
+s4 = rx_code.sub("\g<2>:\g<1>", s)
+print(s4, "\n")
+
+s5 = rx_code.sub("\g<number>:\g<letter>", s)
+print(s5, "\n")
+
+s6 = rx_code.sub("\2:\1", s)
+print(s6, "\n")

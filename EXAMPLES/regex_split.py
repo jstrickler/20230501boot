@@ -8,6 +8,7 @@ voluptate velit esse cillum dolore U901 eu fugiat nulla pariatur.
 Excepteur sint occaecat A-110 cupidatat non proident, sunt in H-332 culpa qui 
 officia deserunt Y-45 mollit anim id est dlaborum"""
 
+#  ^[^^]
 
 # pattern is one or more non-letters
 rx_wordsep = re.compile(r"[^a-z0-9-]+", re.I)  # When splitting, pattern matches what you don't want

@@ -1,4 +1,3 @@
-
 import re
 
 s = """lorem ipsum M-302 dolor sit amet, consectetur r-99 adipiscing elit, sed do
@@ -16,14 +15,17 @@ if re.search(pattern, s):  # search returns True on match
 print()
 
 m = re.search(pattern, s)  # search actually returns match object
-print(m)
+print(m, type(m))
 if m:
-    print("Found:", m.group(0))  # group(0) returns text that was matched by entire expression (or just m.group())
+    print("Found:", m.group(0))  # group(0) returns text that was matched by entire expression (or just m.group())    
 print()
 
 for m in re.finditer(pattern, s):  # iterate over all matches in string:
     print(m.group())
 print()
+
+# same as findall()
+# matches = [m.group() for m in re.finditer(pattern, s)]
 
 matches = re.findall(pattern, s)  # return list of all matches
 print("matches:", matches)

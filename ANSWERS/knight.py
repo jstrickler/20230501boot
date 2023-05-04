@@ -1,3 +1,5 @@
+from random import randint
+
 class Knight(object):
     def __init__(self, name):
         self._name = name
@@ -7,7 +9,7 @@ class Knight(object):
                 (name, title, color, quest, comment) = line.split(":")
                 if name == self._name:
                     self._title = title
-                    self.favorite__color = color
+                    self._favorite_color = color
                     self._quest = quest
                     self._comment = comment
                     break
@@ -22,7 +24,7 @@ class Knight(object):
 
     @property
     def favorite_color(self):
-        return self.favorite__color
+        return self._favorite_color
 
     @property
     def quest(self):
@@ -32,7 +34,19 @@ class Knight(object):
     def comment(self):
         return self._comment
 
+    def joust(self, opponent):
+        self_score = randint(1, 10)
+        opponent_score = randint(1, 10)
+        if self_score >= opponent_score:
+            return self
+        else:
+            return opponent        
 
 if __name__ == "__main__":
     k = Knight("Arthur")
     print(k.name, k.favorite_color, k.comment, k.title)
+    k2 = Knight("Lancelot")
+    print(k2.name)
+    print()
+    winner = k.joust(k2)
+    print(f"{winner.name} wins the tournament")

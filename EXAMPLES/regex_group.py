@@ -9,6 +9,9 @@ voluptate velit esse cillum dolore U901 eu fugiat nulla pariatur.
 Excepteur sint occaecat A-110 cupidatat non proident, sunt in H-332 culpa qui 
 officia deserunt Y-45 mollit anim id est laborum"""
 
+# match 0   -----------------
+# match 1   -------
+# match 2           ---------
 pattern = r'([A-Z])-(\d{2,3})'  # parens delimit groups
 
 for m in re.finditer(pattern, s):
@@ -18,3 +21,12 @@ print()
 
 matches = re.findall(pattern, s)  # findall() returns list of tuples containing groups
 print("matches:", matches)
+
+# match timestamp
+
+#  r"(\d\d):(\d\d):(\d\d)"
+
+#  r"([\w.-]*?)@(?:[\w.-]*?)""
+
+#  r"(?:red|blue)\s+baron", r.I
+
