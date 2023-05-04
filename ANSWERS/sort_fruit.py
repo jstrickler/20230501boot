@@ -1,14 +1,31 @@
 with open("../DATA/fruit.txt", "r") as F:
-    fruit_lines = F.readlines()
+    fruit_lines = F.read().splitlines()
 
-print("".join(sorted(fruit_lines)))
+print(sorted(fruit_lines))
 print()
 
-print("".join(sorted(fruit_lines, key=str.lower)))
+print(sorted(fruit_lines, key=str.lower))
 print()
 
-print("".join(sorted(fruit_lines, key=lambda s: (len(s), s.lower()))))
+#  lambda parameters: (return value)
+print(sorted(fruit_lines, key=lambda s: (len(s), s.lower())))
 print()
 
-print("".join(sorted(fruit_lines, key=lambda s: (s[1].lower(), s[0].lower()))))
+def length_and_name(s):
+    return len(s), s.lower()
+
+print(sorted(fruit_lines, key=length_and_name))
 print()
+
+print(sorted(fruit_lines, key=lambda s: (s[1].lower(), s[0].lower())))
+print()
+
+
+def wacky(fruit):
+    print(f"comparing {fruit} as {fruit.lower()}")
+    return fruit.lower()
+
+result = sorted(fruit_lines, key=wacky)
+print(f"result: {result}")
+
+
