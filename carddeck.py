@@ -9,6 +9,7 @@ class CardDeck:   # inherits from 'object' class
     SUITS = CLUB, DIAMOND, HEART, SPADE
     RANKS = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
 
+
     # constructor -- initializers new instance
     def __init__(self, dealer):
         self._dealer = dealer  # save info in instance
@@ -54,7 +55,25 @@ class CardDeck:   # inherits from 'object' class
         else:
             raise ValueError("Dealer must be a string")
 
+    # (instance method)
+    def print_dashed_line(self):
+        print("-" * 20)
 
+    @classmethod
+    def get_suits(cls):
+        return cls.SUITS
+
+    @staticmethod
+    def print_line(symbol):
+        print(symbol * 60)
+
+if __name__ == "__main__":
+    d = CardDeck("Fred")
+    print(f"d.get_suits(): {d.get_suits()}")
+    print(f"CardDeck.get_suits(): {CardDeck.get_suits()}")
+    CardDeck.print_line("=")
+    d.print_line('*')
+    d.print_dashed_line()
 
 
 

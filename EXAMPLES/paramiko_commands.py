@@ -1,4 +1,3 @@
-
 import paramiko
 
 with paramiko.SSHClient() as ssh:  # create paramiko client
@@ -22,4 +21,9 @@ with paramiko.SSHClient() as ssh:  # create paramiko client
     print(stderr.read().decode())  # read stderr of command
     print('-' * 60)
 
-    del stdin  # workaround for paramiko bug!
+    # ssh.exec_command(???)
+    #  send-expect
+    #  send-expect
+    # ...
+
+    # del stdin  # workaround for paramiko bug!

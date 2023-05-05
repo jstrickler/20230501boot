@@ -1,5 +1,4 @@
 import shutil
-import os
 
 folder = '../DATA'
 archive_name = "datafiles"
